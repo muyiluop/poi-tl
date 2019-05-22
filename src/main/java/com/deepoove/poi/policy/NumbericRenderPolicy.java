@@ -52,17 +52,24 @@ public class NumbericRenderPolicy extends AbstractRenderPolicy {
         List<TextRenderData> datas = numbericData.getNumbers();
         Style fmtStyle = numbericData.getFmtStyle();
 
-        BigInteger numID = doc.addNewNumbericId(numbericData.getNumFmt());
+        BigInteger numID = null;
+        if(numbericData.getNumFmt()!=null){
+			numID = doc.addNewNumbericId(numbericData.getNumFmt());
+		}
         
         XWPFParagraph paragraph;
         XWPFRun newRun;
         for (TextRenderData line : datas) {
             paragraph = doc.insertNewParagraph(run);
-            paragraph.setNumID(numID);
+            if(numID!=null) {
+				paragraph.setNumID(numID);
+			}
             CTP ctp = paragraph.getCTP();
             CTPPr pPr = ctp.isSetPPr() ? ctp.getPPr() : ctp.addNewPPr();
             CTParaRPr pr = pPr.isSetRPr() ? pPr.getRPr() : pPr.addNewRPr();
-            StyleUtils.styleRpr(pr, fmtStyle);
+            if(fmtStyle!=null) {
+				StyleUtils.styleRpr(pr, fmtStyle);
+			}
             newRun = paragraph.createRun();
             StyleUtils.styleRun(newRun, line.getStyle());
             newRun.setText(line.getText());

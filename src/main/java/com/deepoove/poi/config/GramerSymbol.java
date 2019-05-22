@@ -33,6 +33,11 @@ public enum GramerSymbol {
     TEXT('\0'),
 
     /**
+     * 文本数组
+     */
+    TEXT_LIST(':'),
+
+    /**
      * 表格
      */
     TABLE('#'),

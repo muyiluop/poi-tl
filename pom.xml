@@ -11,7 +11,7 @@
 
 	<groupId>com.deepoove</groupId>
 	<artifactId>poi-tl</artifactId>
-	<version>1.5.0-SNAPSHOT</version>
+	<version>1.5.0.beat.1</version>
 	<packaging>jar</packaging>
 
 	<name>poi-tl</name>
@@ -44,6 +44,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<maven.test.skip>true</maven.test.skip>
+		<poi.version>4.1.0</poi.version>
 	</properties>
 
 
@@ -63,6 +64,7 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.7</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -72,17 +74,17 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.16</version>
+			<version>${poi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.16</version>
+			<version>${poi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
-			<version>3.16</version>
+			<version>${poi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>

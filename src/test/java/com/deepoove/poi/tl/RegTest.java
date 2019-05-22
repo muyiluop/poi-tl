@@ -9,7 +9,7 @@ import com.deepoove.poi.config.Configure;
 
 public class RegTest {
 
-    final String TAG_REGEX = Configure.newBuilder().build().getReg();
+    final String TAG_REGEX = Configure.newBuilder().build().getGramerPrefix();
     final String EL_REGEX = "^[^\\.]+(\\.[^\\\\.]+)*$";
 
     @Test
